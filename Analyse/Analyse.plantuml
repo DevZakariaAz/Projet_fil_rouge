@@ -1,22 +1,32 @@
 @startuml
 left to right direction
-actor Utilisateur
+
+actor "Utilisateur" as utilisateur
 
 rectangle "Gestion du Budget Personnel" {
-    Utilisateur -- (Gérer les revenus)
-    Utilisateur -- (Gérer les dépenses)
+    utilisateur -- (Gérer les revenus)
+    utilisateur -- (Gérer les dépenses)
     
-    Utilisateur -- (Visualiser les graphiques)
-    Utilisateur -- (Générer des rapports mensuels)
+    utilisateur -- (Visualiser les graphiques)
+    utilisateur -- (Générer des rapports mensuels)
     
-    Utilisateur -- (Gérer les catégories)
+    utilisateur -- (Gérer les catégories)
     
-    Utilisateur -- (Définir un budget mensuel)
-    Utilisateur -- (Suivre la progression du budget)
+    utilisateur -- (Définir un budget mensuel)
+    utilisateur -- (Suivre la progression du budget)
     
-    Utilisateur -- (Recevoir des notifications)
+    utilisateur -- (Recevoir des notifications)
+    
+    (Gérer les revenus) <... (S'authentifier) : <<include>>
+    (Gérer les dépenses) <... (S'authentifier) : <<include>>
+    (Visualiser les graphiques) <... (S'authentifier) : <<include>>
+    (Générer des rapports mensuels) <... (S'authentifier) : <<include>>
+    (Gérer les catégories) <... (S'authentifier) : <<include>>
+    (Définir un budget mensuel) <... (S'authentifier) : <<include>>
+    (Suivre la progression du budget) <... (S'authentifier) : <<include>>
+    (Recevoir des notifications) <... (S'authentifier) : <<include>>
 }
-
 actor "Système de notifications" as Systeme
 Systeme --> (Recevoir des notifications)
+
 @enduml
