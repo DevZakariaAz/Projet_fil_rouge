@@ -1,0 +1,11 @@
+@startuml
+left to right direction
+
+actor "Utilisateur Financier" as utilisateur
+
+rectangle "Gestion du Budget Personnel" {
+    utilisateur -- (Gérer les catégories)
+    utilisateur -- (Gérer les dépenses mensuelles)
+}
+
+@enduml
