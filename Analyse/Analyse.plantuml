@@ -1,0 +1,22 @@
+@startuml
+left to right direction
+actor Utilisateur
+
+rectangle "Gestion du Budget Personnel" {
+    Utilisateur -- (Gérer les revenus)
+    Utilisateur -- (Gérer les dépenses)
+    
+    Utilisateur -- (Visualiser les graphiques)
+    Utilisateur -- (Générer des rapports mensuels)
+    
+    Utilisateur -- (Gérer les catégories)
+    
+    Utilisateur -- (Définir un budget mensuel)
+    Utilisateur -- (Suivre la progression du budget)
+    
+    Utilisateur -- (Recevoir des notifications)
+}
+
+actor "Système de notifications" as Systeme
+Systeme --> (Recevoir des notifications)
+@enduml
